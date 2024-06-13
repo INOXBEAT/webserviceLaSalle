@@ -1,0 +1,119 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Employee API", // Título de la API
+    "version": "1.0.0" // Versión de la API
+  },
+  "paths": {
+    "/employees": {
+      "post": {
+        "summary": "Add Employee", // Resumen de la operación
+        "parameters": [
+          {
+            "name": "name", // Nombre del parámetro
+            "in": "formData", // Tipo de parámetro (formData indica datos de formulario)
+            "description": "Name of the employee", // Descripción del parámetro
+            "required": true, // Indica si el parámetro es obligatorio
+            "type": "string" // Tipo de datos del parámetro
+          },
+          {
+            "name": "role",
+            "in": "formData",
+            "description": "Role of the employee",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "code",
+            "in": "formData",
+            "description": "Code of the employee",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "area",
+            "in": "formData",
+            "description": "Area of the employee",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Employee added successfully." // Descripción de la respuesta
+          }
+        },
+        "consumes": [
+          "application/x-www-form-urlencoded" // Tipo de consumidor para la operación
+        ]
+      }
+    },
+    "/employees/{id}": {
+      "put": {
+        "summary": "Update Employee", // Resumen de la operación
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the employee",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "Name of the employee",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "role",
+            "in": "formData",
+            "description": "Role of the employee",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "code",
+            "in": "formData",
+            "description": "Code of the employee",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "area",
+            "in": "formData",
+            "description": "Area of the employee",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Employee updated successfully." // Descripción de la respuesta
+          }
+        },
+        "consumes": [
+          "application/x-www-form-urlencoded" // Tipo de consumidor para la operación
+        ]
+      },
+      "delete": {
+        "summary": "Delete Employee", // Resumen de la operación
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the employee",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Employee deleted successfully." // Descripción de la respuesta
+          }
+        }
+      }
+    }
+  }
+}
